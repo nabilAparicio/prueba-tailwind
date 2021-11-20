@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c8be01e5e1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Document</title>
+</head>
+<body class="bg-gray-100 ">
+    <nav class="container flex justify-end mx-auto gap-1">
+        <div x-data="{ open: false }" @mouseleave="open = false" class="relative">
+            <!-- Dropdown toggle button -->
+            <button @click="open = true" class="flex items-center block p-2 bg-transparent  rounded-sm hover:text-gray-500">
+                <span class="mr-4"><i class="fal fa-bullhorn text-xl"></i></span>
+                <svg class="w-6 h-6 text-white text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div x-show="open"
+            x-transition:enter.duration.500ms
+            x-transition:leave.duration.800ms
+            class="absolute right-0 w-48 py-2  bg-white  rounded-md shadow-xl">
+                <a href="#"
+                    class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
+                    <i class="fab fa-twitter text-blue-400 text-lg"></i>
+                    Twitter
+                </a>
+                <a href="#"
+                    class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
+                    <i class="fab fa-reddit text-red-600 text-lg"></i>
+                    Reddit
+                </a>
+                <a href="#"
+                    class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
+                    <i class="fas fa-blog text-purple-600 text-lg"></i>
+                    Blog
+                </a>
+                <a href="#"
+                    class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
+                    <i class="fas fa-newspaper text-yellow-500 text-lg"></i>
+                    Newsletter
+                </a>
+            </div>
+        </div>
+        <div x-data="{ open: false }" @mouseleave="open = false" class="relative">
+            <!-- Dropdown toggle button -->
+            <button @click="open = true" class="flex items-center block p-2 bg-transparent  rounded-sm hover:text-gray-500">
+                <span class="mr-4"><i class="fas fa-bars text-xl"></i></span>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div x-show="open"
+            x-transition:enter.scale.80
+            x-transition:leave.scale.90
+            class="absolute right-0 w-48 h-auto py-2  bg-white rounded-md shadow-xl border">
+                <ul class="mx-2 my-5 ">
+                    <span class="text-xs text-gray-500 mb">
+                        SETTINGS
+                    </span>
+                    <a href="" class="block text-sm " >Themes</a>
+                    <a href="" class="block text-sm " >All Settings</a>
+                    <a href="" class="block text-sm " >IBang Search Shortcuts</a>
+                </ul>
+                <ul class="mx-2 my-5 "><span class="text-xs text-gray-500">Essentials</span>  
+                    <a href="" class="block text-sm " >Private Search</a>
+                    <a href="" class="block text-sm " >App and Extension</a>
+                </ul>
+                <ul class="mx-2 my-5 "><span class="text-xs text-gray-500">Why Privacy</span> 
+                    <a href="" class="block text-sm " >Privacy Blog</a>
+                    <a href="" class="block text-sm " >Privacy Crash Course</a>
+                    <a href="" class="block text-sm " >Help Spread Privacy</a>
+                </ul>
+                <ul class="mx-2 my-5 "><span class="text-xs text-gray-500">Who We Are</span> 
+                    <a href="" class="block text-sm " >About Us</a>
+                    <a href="" class="block text-sm " >Privacy Policy</a>
+                    <a href="" class="block text-sm " >Careers</a>
+                    <a href="" class="block text-sm " >Press Kit</a>
+                </ul>
+                <ul class="mx-2 my-5 "><span class="text-xs text-gray-500">Keep in touch</span> 
+                    <a href="" class="block text-sm " >Twitter</a>
+                    <a href="" class="block text-sm " >Reddit</a>
+                    <a href="" class="block text-sm " >Help</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="flex place-content-center mt-8 h-screen ">
+        <div class="">
+            <figure>
+                <img class="h-52 mx-auto " src="https://i2.wp.com/noxuservices.com/wp-content/uploads/2020/01/logo.png?w=561&ssl=1" alt="imagen de noxus">
+            </figure>
+            <form class="flex " action="/">
+                <input class="w-96 mt-4 border shadow-lg p-2 focus:outline-none focus:ring focus:border-blue-500 rounded-sm " type="text" placeholder="The most coolest way to search the web "> 
+                 <a href="//" class="">
+                     <div class="animate-bounce w-6 h-6 flex place-items-center">
+                     <i class="fas fa-search hover:text-blue-300 duration-500 text-2xl text-blue-500 "></i>
+                    </div>
+                 </a> 
+            </form>
+        </div>
+    </section>
+    <footer class="border-t-2 border-blue-200 flex mx-5 p-6 ">
+        <ul class="w-3/4 flex gap-4">
+            <a href="" >Contact Us</a>
+            <a href="">F.A.K</a>
+            <a href="">Cookies Monster Policy</a>
+            <a href="">Legal Terms</a>
+            <a href="">Privacy Policy</a>
+        </ul>
+        <div class="w-1/4 justify-end flex ">
+            All right reserved to me :D
+        </div>
+    </footer>
+</body>
+</html>
